@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Sandesh | Visitor Registration Form</title>
+    <link rel="icon" href="logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Mukta:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="bg-stripe" aria-hidden="true"></div>
+
+    <main class="container">
+      <header class="hero">
+        <img src="logo.png" alt="Loksewa Team Sandesh logo" class="logo" />
+        <h1>Visitor Registration</h1>
+        <p class="intro">
+          Welcome to <strong>Team Sandesh Institute Pvt. Ltd.</strong><br />
+          Please complete this short form during your visit.
+        </p>
+        <p class="location">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"
+            />
+          </svg>
+          New Baneshwor, Kathmandu, Nepal
+        </p>
+      </header>
+
+      <form id="visitorForm" class="card" novalidate>
+        <p class="required-note"><span class="req">*</span> Required</p>
+
+        <!-- 1. Full Name -->
+        <div class="field" data-field="fullName">
+          <label for="fullName"
+            >Full Name <span class="req">*</span
+            ><span class="np">पूरा नाम</span></label
+          >
+          <input
+            type="text"
+            id="fullName"
+            autocomplete="name"
+            placeholder="e.g. Ram Bahadur Shrestha"
+            required
+          />
+          <p class="error-msg">
+            Please enter your full name. / कृपया पूरा नाम लेख्नुहोस्।
+          </p>
+        </div>
+
+        <!-- 2. Phone -->
+        <div class="field" data-field="phone">
+          <label for="phone"
+            >Phone Number <span class="req">*</span
+            ><span class="np">फोन नम्बर</span></label
+          >
+          <div class="input-prefix">
+            <span>+977</span>
+            <input
+              type="tel"
+              id="phone"
+              inputmode="numeric"
+              maxlength="10"
+              autocomplete="tel-national"
+              placeholder="98XXXXXXXX"
+              required
+            />
+          </div>
+          <p class="help">
+            Enter a valid 10-digit Nepali mobile number. / १० अङ्कको मोबाइल
+            नम्बर लेख्नुहोस्।
+          </p>
+          <p class="error-msg">
+            Enter a valid 10-digit mobile number starting with 9. / ९ बाट सुरु
+            हुने १० अङ्कको नम्बर लेख्नुहोस्।
+          </p>
+        </div>
+
+        <!-- 3. Temporary Address -->
+        <div class="field" data-field="tempAddress">
+          <label for="tempAddress"
+            >Temporary Address (District / Municipality)
+            <span class="req">*</span
+            ><span class="np">अस्थायी ठेगाना (जिल्ला / नगरपालिका)</span></label
+          >
+          <input
+            type="text"
+            id="tempAddress"
+            placeholder="e.g. Kathmandu / Kathmandu Metropolitan City"
+            required
+          />
+          <p class="error-msg">
+            Please enter your temporary address. / कृपया अस्थायी ठेगाना
+            लेख्नुहोस्।
+          </p>
+        </div>
+
+        <!-- 4. Permanent Address -->
+        <div class="field" data-field="permAddress">
+          <label for="permAddress"
+            >Permanent Address (District / Municipality)
+            <span class="req">*</span
+            ><span class="np">स्थायी ठेगाना (जिल्ला / नगरपालिका)</span></label
+          >
+          <label class="same-check">
+            <input type="checkbox" id="sameAddress" />
+            Same as temporary address / अस्थायी ठेगाना नै हो
+          </label>
+          <input
+            type="text"
+            id="permAddress"
+            placeholder="e.g. Jhapa / Mechinagar Municipality"
+            required
+          />
+          <p class="error-msg">
+            Please enter your permanent address. / कृपया स्थायी ठेगाना
+            लेख्नुहोस्।
+          </p>
+        </div>
+
+        <!-- Choice questions are rendered by script.js -->
+        <div id="choiceQuestions"></div>
+
+        <div class="form-status" id="formStatus" role="alert" hidden></div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">
+          <span class="btn-label">Submit</span>
+          <span class="spinner" aria-hidden="true"></span>
+        </button>
+      </form>
+
+      <section id="thankYou" class="card thank-you" hidden>
+        <div class="check" aria-hidden="true">
+          <svg viewBox="0 0 52 52">
+            <circle cx="26" cy="26" r="24" />
+            <path d="M15 27l7 7 15-16" />
+          </svg>
+        </div>
+        <h2>Thank you for visiting Team Sandesh!</h2>
+        <p class="np-big">टिम सन्देशमा आउनुभएकोमा धन्यवाद!</p>
+        <p>
+          Your details have been recorded. Our team will be with you shortly.
+        </p>
+        <button type="button" class="btn-secondary" id="newResponseBtn">
+          Submit another response
+        </button>
+      </section>
+
+      <footer class="footer">
+        © <span id="year"></span> Team Sandesh Institute Pvt. Ltd.
+      </footer>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

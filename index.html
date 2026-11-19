@@ -1,229 +1,386 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
-  <meta http-equiv="Pragma" content="no-cache" />
-  <meta http-equiv="Expires" content="0" />
-  <meta name="theme-color" content="#0f2f6b" />
-  <title>Team Sandesh | Visitor Registration</title>
-  <link rel="icon" href="logo.png?v=3" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Mukta:wght@400;500;600&display=swap" rel="stylesheet" />
-  <!-- Change ?v=3 to a new number every time you update the files, so browsers load the latest version -->
-  <link rel="stylesheet" href="style.css?v=3" />
-</head>
-<body>
-  <div class="app">
-    <div class="shell">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="theme-color" content="#0f2f6b" />
+    <title>Team Sandesh | Visitor Registration</title>
+    <link rel="icon" href="logo.png?v=4" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800;900&family=Mukta:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Change ?v=4 to a new number every time you update the files, so browsers load the latest version -->
+    <link rel="stylesheet" href="style.css?v=4" />
+  </head>
+  <body>
+    <div class="app">
+      <div class="shell">
+        <!-- ========== Left brand panel (desktop / tablet) ========== -->
+        <aside class="side">
+          <span class="shape shape-red" aria-hidden="true"></span>
+          <span class="shape shape-blue" aria-hidden="true"></span>
+          <span class="shape shape-line" aria-hidden="true"></span>
 
-      <!-- ========== Left brand panel (desktop / tablet) ========== -->
-      <aside class="side">
-        <span class="shape shape-red" aria-hidden="true"></span>
-        <span class="shape shape-blue" aria-hidden="true"></span>
-        <span class="shape shape-line" aria-hidden="true"></span>
-
-        <div class="side-top">
-          <div class="logo-tile"><img src="logo.png?v=3" alt="Loksewa Team Sandesh" /></div>
-          <p class="eyebrow">Team Sandesh Institute Pvt. Ltd.</p>
-          <h1>Visitor<br />Registration</h1>
-          <p class="side-np">आगन्तुक दर्ता फारम</p>
-          <p class="side-lead">Namaste! Please take a minute to tell us about your visit.</p>
-        </div>
-
-        <ol class="stepper" id="stepper" aria-label="Form progress"></ol>
-
-        <p class="side-foot">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"/></svg>
-          New Baneshwor, Kathmandu, Nepal
-        </p>
-      </aside>
-
-      <!-- ========== Right form panel ========== -->
-      <main class="panel">
-        <header class="mobile-head">
-          <img src="logo.png?v=3" alt="Loksewa Team Sandesh" />
-          <div>
-            <strong>Visitor Registration</strong>
-            <span>Team Sandesh Institute</span>
+          <div class="side-top">
+            <div class="logo-tile">
+              <img src="logo.png?v=4" alt="Loksewa Team Sandesh" />
+            </div>
+            <p class="eyebrow">Team Sandesh Institute Pvt. Ltd.</p>
+            <h1>Visitor<br />Registration</h1>
+            <p class="side-np">आगन्तुक दर्ता फारम</p>
+            <p class="side-lead">
+              Namaste! Please take a minute to tell us about your visit.
+            </p>
           </div>
-        </header>
 
-        <!-- Progress: step label + segments -->
-        <div class="topbar">
-          <div class="topbar-text">
-            <span id="topStep">Step 1 of 6</span>
-            <strong id="topTitle">Your details</strong>
+          <ol class="stepper" id="stepper" aria-label="Form progress"></ol>
+
+          <p class="side-foot">
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                fill="currentColor"
+                d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5Z"
+              />
+            </svg>
+            New Baneshwor, Kathmandu, Nepal
+          </p>
+        </aside>
+
+        <!-- ========== Right form panel ========== -->
+        <main class="panel">
+          <header class="mobile-head">
+            <img src="logo.png?v=4" alt="Loksewa Team Sandesh" />
+            <div>
+              <strong>Visitor Registration</strong>
+              <span>Team Sandesh Institute</span>
+            </div>
+          </header>
+
+          <!-- Progress: step label + segments -->
+          <div class="topbar">
+            <div class="topbar-text">
+              <span id="topStep">Step 1 of 6</span>
+              <strong id="topTitle">Your details</strong>
+            </div>
+            <div class="segments" id="segments" aria-hidden="true"></div>
           </div>
-          <div class="segments" id="segments" aria-hidden="true"></div>
-        </div>
 
-        <form id="wizard" class="wizard" novalidate autocomplete="on">
-
-          <!-- Section 1: Personal details -->
-          <section class="step" data-title="Your details" data-np="तपाईंको विवरण">
-            <div class="step-head">
-              <span class="step-num" aria-hidden="true"></span>
-              <h2>Let's start with your details</h2>
-              <p class="np">तपाईंको विवरणबाट सुरु गरौँ</p>
-            </div>
-
-            <div class="field" data-field="fullName">
-              <label for="fullName">Full name <span class="np-inline">पूरा नाम</span></label>
-              <div class="input-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
-                <input type="text" id="fullName" autocomplete="name" placeholder="e.g. Ram Bahadur Shrestha" />
+          <form id="wizard" class="wizard" novalidate autocomplete="on">
+            <!-- Section 1: Personal details -->
+            <section
+              class="step"
+              data-title="Your details"
+              data-np="तपाईंको विवरण"
+            >
+              <div class="step-head">
+                <span class="step-num" aria-hidden="true"></span>
+                <h2>Let's start with your details</h2>
+                <p class="np">तपाईंको विवरणबाट सुरु गरौँ</p>
               </div>
-              <p class="error-msg">Please enter your full name. · कृपया पूरा नाम लेख्नुहोस्।</p>
-            </div>
 
-            <div class="field" data-field="phone">
-              <label for="phone">Mobile number <span class="np-inline">मोबाइल नम्बर</span></label>
-              <div class="input-group">
-                <span class="prefix">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg>
-                  +977
-                </span>
-                <input type="tel" id="phone" inputmode="numeric" maxlength="10" autocomplete="tel-national" placeholder="98XXXXXXXX" />
+              <div class="field" data-field="fullName">
+                <label for="fullName"
+                  >Full name <span class="np-inline">पूरा नाम</span></label
+                >
+                <div class="input-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <circle cx="12" cy="8" r="4" />
+                    <path d="M4 21c0-4 3.6-7 8-7s8 3 8 7" />
+                  </svg>
+                  <input
+                    type="text"
+                    id="fullName"
+                    autocomplete="name"
+                    placeholder="e.g. Ram Bahadur Shrestha"
+                  />
+                </div>
+                <p class="error-msg">
+                  Please enter your full name. · कृपया पूरा नाम लेख्नुहोस्।
+                </p>
               </div>
-              <p class="help">10-digit Nepali mobile number · १० अङ्कको मोबाइल नम्बर</p>
-              <p class="error-msg">Enter a valid 10-digit number starting with 9. · ९ बाट सुरु हुने १० अङ्कको नम्बर लेख्नुहोस्।</p>
-            </div>
-          </section>
 
-          <!-- Section 2: Address -->
-          <section class="step" data-title="Address" data-np="ठेगाना">
-            <div class="step-head">
-              <span class="step-num" aria-hidden="true"></span>
-              <h2>Where do you live?</h2>
-              <p class="np">तपाईं कहाँ बस्नुहुन्छ?</p>
-            </div>
-
-            <div class="field" data-field="tempAddress">
-              <label for="tempAddress">Temporary address <span class="np-inline">अस्थायी ठेगाना</span></label>
-              <div class="input-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg>
-                <input type="text" id="tempAddress" placeholder="District / Municipality — e.g. Kathmandu" />
+              <div class="field" data-field="phone">
+                <label for="phone"
+                  >Mobile number
+                  <span class="np-inline">मोबाइल नम्बर</span></label
+                >
+                <div class="input-group">
+                  <span class="prefix">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <rect x="6" y="2" width="12" height="20" rx="3" />
+                      <path d="M11 18h2" />
+                    </svg>
+                    +977
+                  </span>
+                  <input
+                    type="tel"
+                    id="phone"
+                    inputmode="numeric"
+                    maxlength="10"
+                    autocomplete="tel-national"
+                    placeholder="98XXXXXXXX"
+                  />
+                </div>
+                <p class="help">
+                  10-digit Nepali mobile number · १० अङ्कको मोबाइल नम्बर
+                </p>
+                <p class="error-msg">
+                  Enter a valid 10-digit number starting with 9. · ९ बाट सुरु
+                  हुने १० अङ्कको नम्बर लेख्नुहोस्।
+                </p>
               </div>
-              <p class="error-msg">Please enter your temporary address. · कृपया अस्थायी ठेगाना लेख्नुहोस्।</p>
-            </div>
 
-            <div class="field" data-field="permAddress">
-              <label for="permAddress">Permanent address <span class="np-inline">स्थायी ठेगाना</span></label>
-              <label class="switch">
-                <input type="checkbox" id="sameAddress" />
-                <span class="track"><span class="thumb"></span></span>
-                <span class="switch-text">Same as temporary · अस्थायी ठेगाना नै हो</span>
-              </label>
-              <div class="input-icon">
-                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-7.75-7-12a7 7 0 0 1 14 0c0 4.25-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>
-                <input type="text" id="permAddress" placeholder="District / Municipality — e.g. Jhapa" />
+              <div class="field" data-field="email">
+                <label for="email"
+                  >Email address <span class="np-inline">इमेल ठेगाना</span>
+                  <span class="tag">Optional · ऐच्छिक</span></label
+                >
+                <div class="input-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="3" y="5" width="18" height="14" rx="3" />
+                    <path d="M4 7l8 6 8-6" />
+                  </svg>
+                  <input
+                    type="email"
+                    id="email"
+                    inputmode="email"
+                    autocomplete="email"
+                    autocapitalize="off"
+                    spellcheck="false"
+                    placeholder="e.g. name@gmail.com"
+                  />
+                </div>
+                <p class="error-msg">
+                  Please enter a valid email address. · कृपया सही इमेल ठेगाना
+                  लेख्नुहोस्।
+                </p>
               </div>
-              <p class="error-msg">Please enter your permanent address. · कृपया स्थायी ठेगाना लेख्नुहोस्।</p>
+            </section>
+
+            <!-- Section 2: Address -->
+            <section class="step" data-title="Address" data-np="ठेगाना">
+              <div class="step-head">
+                <span class="step-num" aria-hidden="true"></span>
+                <h2>Where do you live?</h2>
+                <p class="np">तपाईं कहाँ बस्नुहुन्छ?</p>
+              </div>
+
+              <div class="field" data-field="tempAddress">
+                <label for="tempAddress"
+                  >Temporary address
+                  <span class="np-inline">अस्थायी ठेगाना</span></label
+                >
+                <div class="input-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M3 11l9-7 9 7" />
+                    <path d="M5 10v10h14V10" />
+                    <path d="M10 20v-6h4v6" />
+                  </svg>
+                  <input
+                    type="text"
+                    id="tempAddress"
+                    placeholder="District / Municipality — e.g. Kathmandu"
+                  />
+                </div>
+                <p class="error-msg">
+                  Please enter your temporary address. · कृपया अस्थायी ठेगाना
+                  लेख्नुहोस्।
+                </p>
+              </div>
+
+              <div class="field" data-field="permAddress">
+                <label for="permAddress"
+                  >Permanent address
+                  <span class="np-inline">स्थायी ठेगाना</span></label
+                >
+                <label class="switch">
+                  <input type="checkbox" id="sameAddress" />
+                  <span class="track"><span class="thumb"></span></span>
+                  <span class="switch-text"
+                    >Same as temporary · अस्थायी ठेगाना नै हो</span
+                  >
+                </label>
+                <div class="input-icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path
+                      d="M12 21s-7-7.75-7-12a7 7 0 0 1 14 0c0 4.25-7 12-7 12z"
+                    />
+                    <circle cx="12" cy="9" r="2.5" />
+                  </svg>
+                  <input
+                    type="text"
+                    id="permAddress"
+                    placeholder="District / Municipality — e.g. Jhapa"
+                  />
+                </div>
+                <p class="error-msg">
+                  Please enter your permanent address. · कृपया स्थायी ठेगाना
+                  लेख्नुहोस्।
+                </p>
+              </div>
+            </section>
+
+            <!-- Section 3: Course -->
+            <section
+              class="step"
+              data-title="Course"
+              data-np="कोर्स"
+              data-auto="course"
+            >
+              <div class="step-head">
+                <span class="step-num" aria-hidden="true"></span>
+                <h2>Which course are you interested in?</h2>
+                <p class="np">तपाईंलाई कुन कोर्समा रुचि छ?</p>
+              </div>
+              <div class="field" data-field="course">
+                <div class="choices two-col" data-q="course"></div>
+                <p class="error-msg">
+                  Please choose a course. · कृपया एउटा कोर्स छान्नुहोस्।
+                </p>
+              </div>
+            </section>
+
+            <!-- Section 4: Source -->
+            <section
+              class="step"
+              data-title="How you found us"
+              data-np="जानकारीको स्रोत"
+              data-auto="source"
+            >
+              <div class="step-head">
+                <span class="step-num" aria-hidden="true"></span>
+                <h2>How did you hear about us?</h2>
+                <p class="np">हाम्रोबारे कहाँबाट थाहा पाउनुभयो?</p>
+              </div>
+              <div class="field" data-field="source">
+                <div class="choices two-col" data-q="source"></div>
+                <p class="error-msg">
+                  Please choose an option. · कृपया एउटा विकल्प छान्नुहोस्।
+                </p>
+              </div>
+            </section>
+
+            <!-- Section 5: Visit -->
+            <section class="step" data-title="Your visit" data-np="भ्रमण विवरण">
+              <div class="step-head">
+                <span class="step-num" aria-hidden="true"></span>
+                <h2>Tell us about your visit</h2>
+                <p class="np">आजको भ्रमणबारे बताउनुहोस्</p>
+              </div>
+              <div class="field" data-field="purpose">
+                <p class="q-label">
+                  Purpose of visit
+                  <span class="np-inline">आउनुको उद्देश्य</span>
+                  <span class="tag">Optional · ऐच्छिक</span>
+                </p>
+                <div class="choices two-col" data-q="purpose"></div>
+              </div>
+              <div class="field" data-field="timeline">
+                <p class="q-label">
+                  When are you planning to join?
+                  <span class="np-inline">कहिले भर्ना हुने योजना छ?</span>
+                  <span class="tag">Optional · ऐच्छिक</span>
+                </p>
+                <div class="choices four-col" data-q="timeline"></div>
+              </div>
+            </section>
+
+            <!-- Section 6: Contact permission -->
+            <section
+              class="step"
+              data-title="Follow-up"
+              data-np="सम्पर्क अनुमति"
+              data-auto="contact"
+            >
+              <div class="step-head">
+                <span class="step-num" aria-hidden="true"></span>
+                <h2>May Team Sandesh contact you about your course inquiry?</h2>
+                <p class="np">
+                  टिम सन्देशले तपाईंलाई कोर्सबारे सम्पर्क गर्न सक्छ?
+                </p>
+              </div>
+              <div class="field" data-field="contact">
+                <div class="choices yes-no" data-q="contact"></div>
+                <p class="error-msg">
+                  Please choose Yes or No. · कृपया हुन्छ वा हुँदैन छान्नुहोस्।
+                </p>
+              </div>
+            </section>
+
+            <!-- Section 7: Review -->
+            <section class="step" data-title="Review" data-np="पुनरावलोकन">
+              <div class="step-head">
+                <span class="step-num" aria-hidden="true"></span>
+                <h2>Review your answers</h2>
+                <p class="np">पेश गर्नुअघि आफ्नो विवरण जाँच्नुहोस्</p>
+              </div>
+              <dl class="review" id="reviewList"></dl>
+              <div
+                class="form-status"
+                id="formStatus"
+                role="alert"
+                hidden
+              ></div>
+            </section>
+          </form>
+
+          <!-- Success -->
+          <section class="success" id="done" hidden>
+            <div class="done-check" aria-hidden="true">
+              <svg viewBox="0 0 52 52">
+                <circle cx="26" cy="26" r="24" />
+                <path d="M15 27l7 7 15-16" />
+              </svg>
             </div>
+            <h2>Thank you for visiting Team Sandesh!</h2>
+            <p class="np">टिम सन्देशमा आउनुभएकोमा धन्यवाद!</p>
+            <p class="done-sub">
+              Your details have been recorded. Our team will be with you
+              shortly.
+            </p>
+            <button type="button" class="btn btn-primary" id="restartBtn">
+              New registration
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+            </button>
+            <p class="countdown">
+              Resetting for the next visitor in <b id="countdown">10</b>s
+            </p>
           </section>
 
-          <!-- Section 3: Course -->
-          <section class="step" data-title="Course" data-np="कोर्स" data-auto="course">
-            <div class="step-head">
-              <span class="step-num" aria-hidden="true"></span>
-              <h2>Which course are you interested in?</h2>
-              <p class="np">तपाईंलाई कुन कोर्समा रुचि छ?</p>
-            </div>
-            <div class="field" data-field="course">
-              <div class="choices two-col" data-q="course"></div>
-              <p class="error-msg">Please choose a course. · कृपया एउटा कोर्स छान्नुहोस्।</p>
-            </div>
-          </section>
-
-          <!-- Section 4: Source -->
-          <section class="step" data-title="How you found us" data-np="जानकारीको स्रोत" data-auto="source">
-            <div class="step-head">
-              <span class="step-num" aria-hidden="true"></span>
-              <h2>How did you hear about us?</h2>
-              <p class="np">हाम्रोबारे कहाँबाट थाहा पाउनुभयो?</p>
-            </div>
-            <div class="field" data-field="source">
-              <div class="choices two-col" data-q="source"></div>
-              <p class="error-msg">Please choose an option. · कृपया एउटा विकल्प छान्नुहोस्।</p>
-            </div>
-          </section>
-
-          <!-- Section 5: Visit -->
-          <section class="step" data-title="Your visit" data-np="भ्रमण विवरण">
-            <div class="step-head">
-              <span class="step-num" aria-hidden="true"></span>
-              <h2>Tell us about your visit</h2>
-              <p class="np">आजको भ्रमणबारे बताउनुहोस्</p>
-            </div>
-            <div class="field" data-field="purpose">
-              <p class="q-label">Purpose of visit <span class="np-inline">आउनुको उद्देश्य</span> <span class="tag">Optional · ऐच्छिक</span></p>
-              <div class="choices two-col" data-q="purpose"></div>
-            </div>
-            <div class="field" data-field="timeline">
-              <p class="q-label">When are you planning to join? <span class="np-inline">कहिले भर्ना हुने योजना छ?</span> <span class="tag">Optional · ऐच्छिक</span></p>
-              <div class="choices four-col" data-q="timeline"></div>
-            </div>
-          </section>
-
-          <!-- Section 6: Contact permission -->
-          <section class="step" data-title="Follow-up" data-np="सम्पर्क अनुमति" data-auto="contact">
-            <div class="step-head">
-              <span class="step-num" aria-hidden="true"></span>
-              <h2>May Team Sandesh contact you about your course inquiry?</h2>
-              <p class="np">टिम सन्देशले तपाईंलाई कोर्सबारे सम्पर्क गर्न सक्छ?</p>
-            </div>
-            <div class="field" data-field="contact">
-              <div class="choices yes-no" data-q="contact"></div>
-              <p class="error-msg">Please choose Yes or No. · कृपया हुन्छ वा हुँदैन छान्नुहोस्।</p>
-            </div>
-          </section>
-
-          <!-- Section 7: Review -->
-          <section class="step" data-title="Review" data-np="पुनरावलोकन">
-            <div class="step-head">
-              <span class="step-num" aria-hidden="true"></span>
-              <h2>Review your answers</h2>
-              <p class="np">पेश गर्नुअघि आफ्नो विवरण जाँच्नुहोस्</p>
-            </div>
-            <dl class="review" id="reviewList"></dl>
-            <div class="form-status" id="formStatus" role="alert" hidden></div>
-          </section>
-        </form>
-
-        <!-- Success -->
-        <section class="success" id="done" hidden>
-          <div class="done-check" aria-hidden="true">
-            <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24" /><path d="M15 27l7 7 15-16" /></svg>
-          </div>
-          <h2>Thank you for visiting Team Sandesh!</h2>
-          <p class="np">टिम सन्देशमा आउनुभएकोमा धन्यवाद!</p>
-          <p class="done-sub">Your details have been recorded. Our team will be with you shortly.</p>
-          <button type="button" class="btn btn-primary" id="restartBtn">
-            New registration
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-          </button>
-          <p class="countdown">Resetting for the next visitor in <b id="countdown">10</b>s</p>
-        </section>
-
-        <footer class="actions" id="actions">
-          <button type="button" class="btn btn-ghost" id="backBtn">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6" /></svg>
-            Back
-          </button>
-          <span class="kbd-hint">or press <kbd>Enter ↵</kbd></span>
-          <button type="button" class="btn btn-primary" id="nextBtn">
-            <span class="btn-label">Next</span>
-            <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
-            <span class="spinner" aria-hidden="true"></span>
-          </button>
-        </footer>
-      </main>
+          <footer class="actions" id="actions">
+            <button type="button" class="btn btn-ghost" id="backBtn">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M19 12H5M11 6l-6 6 6 6" />
+              </svg>
+              Back
+            </button>
+            <span class="kbd-hint">or press <kbd>Enter ↵</kbd></span>
+            <button type="button" class="btn btn-primary" id="nextBtn">
+              <span class="btn-label">Next</span>
+              <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" />
+              </svg>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+          </footer>
+        </main>
+      </div>
     </div>
-  </div>
 
-  <script src="script.js?v=3"></script>
-</body>
+    <script src="script.js?v=4"></script>
+  </body>
 </html>

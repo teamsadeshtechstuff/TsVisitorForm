@@ -16,11 +16,17 @@ const QUESTIONS = {
     choices: [
       ["NASU / Kharidar", "नासु / खरिदार"],
       ["Shakha Adhikrit (Officer)", "शाखा अधिकृत"],
-      ["Banking (NRB / RBB / NBL / ADBL)", "बैंकिङ (राष्ट्र बैंक / RBB / NBL / ADBL)"],
+      [
+        "Banking (NRB / RBB / NBL / ADBL)",
+        "बैंकिङ (राष्ट्र बैंक / RBB / NBL / ADBL)",
+      ],
       ["Teaching Service Commission (TSC)", "शिक्षक सेवा आयोग"],
       ["Teaching License", "शिक्षक अध्यापन अनुमतिपत्र"],
       ["Bini / Prasa", "बिनी / प्रसा"],
-      ["NEA / NTC / EPF", "विद्युत प्राधिकरण / नेपाल टेलिकम / कर्मचारी सञ्चय कोष"],
+      [
+        "NEA / NTC / EPF",
+        "विद्युत प्राधिकरण / नेपाल टेलिकम / कर्मचारी सञ्चय कोष",
+      ],
       ["Police ASI / Inspector", "प्रहरी सहायक निरीक्षक / निरीक्षक"],
     ],
   },
@@ -71,8 +77,10 @@ const QUESTIONS = {
 };
 
 const OTHER = ["Other", "अन्य"];
-const ICON_CHECK = '<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
-const ICON_X = '<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+const ICON_CHECK =
+  '<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+const ICON_X =
+  '<svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>';
 
 const $ = (id) => document.getElementById(id);
 const wizard = $("wizard");
@@ -159,7 +167,9 @@ function render(direction = "forward") {
     if (n) n.textContent = String(i + 1).padStart(2, "0");
   });
   $("topStep").textContent =
-    current < QUESTION_STEPS ? `Step ${current + 1} of ${QUESTION_STEPS} · चरण ${toNp(current + 1)}/${toNp(QUESTION_STEPS)}` : "Final step · अन्तिम चरण";
+    current < QUESTION_STEPS
+      ? `Step ${current + 1} of ${QUESTION_STEPS} · चरण ${toNp(current + 1)}/${toNp(QUESTION_STEPS)}`
+      : "Final step · अन्तिम चरण";
   $("topTitle").textContent = steps[current].dataset.title;
   [...segments.children].forEach((seg, i) => {
     seg.classList.toggle("filled", i < current);
@@ -169,8 +179,13 @@ function render(direction = "forward") {
   // Stepper
   [...stepper.children].forEach((li, i) => {
     li.classList.toggle("active", i === current);
-    li.classList.toggle("done", i < current || (i <= maxReached && i !== current));
-    li.querySelector(".dot").innerHTML = li.classList.contains("done") ? ICON_CHECK : i + 1;
+    li.classList.toggle(
+      "done",
+      i < current || (i <= maxReached && i !== current),
+    );
+    li.querySelector(".dot").innerHTML = li.classList.contains("done")
+      ? ICON_CHECK
+      : i + 1;
   });
 
   // Buttons
@@ -186,7 +201,9 @@ function render(direction = "forward") {
   wizard.scrollTop = 0;
 
   // Focus the first text box on text steps (desktop only, avoids popping keyboards on tablets)
-  const firstText = steps[current].querySelector('input[type="text"]:not(.other-input), input[type="tel"]');
+  const firstText = steps[current].querySelector(
+    'input[type="text"]:not(.other-input), input[type="tel"]',
+  );
   if (firstText && window.matchMedia("(pointer: fine)").matches) {
     setTimeout(() => firstText.focus({ preventScroll: true }), 120);
   }
@@ -226,8 +243,11 @@ document.addEventListener("keydown", (e) => {
     next();
     return;
   }
-  const typing = e.target.matches('input[type="text"], input[type="tel"]');
-  if (typing || e.ctrlKey || e.metaKey || e.altKey || e.key.length !== 1) return;
+  const typing = e.target.matches(
+    'input[type="text"], input[type="tel"], input[type="email"]',
+  );
+  if (typing || e.ctrlKey || e.metaKey || e.altKey || e.key.length !== 1)
+    return;
 
   const groups = steps[current].querySelectorAll("[data-q]");
   if (groups.length !== 1) return;
@@ -238,7 +258,9 @@ document.addEventListener("keydown", (e) => {
     if (k === "y") radio = $(`${id}_0`);
     if (k === "n") radio = $(`${id}_1`);
   } else {
-    radio = steps[current].querySelector(`input[data-key="${e.key.toUpperCase()}"]`);
+    radio = steps[current].querySelector(
+      `input[data-key="${e.key.toUpperCase()}"]`,
+    );
   }
   if (radio) {
     radio.checked = true;
@@ -308,6 +330,8 @@ wizard.addEventListener("input", (e) => {
    Validation (per step)
    ========================================================= */
 const PHONE_RE = /^9[0-9]{9}$/;
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+const EMAIL_REQUIRED = false; // set to true to make email compulsory
 
 function getChoiceValue(id) {
   const checked = document.querySelector(`input[name="${id}"]:checked`);
@@ -331,13 +355,21 @@ function validateStep(i) {
     const key = field.dataset.field;
     if (key === "fullName") mark(field, !$("fullName").value.trim());
     else if (key === "phone") mark(field, !PHONE_RE.test(phone.value.trim()));
-    else if (key === "tempAddress") mark(field, !tempAddress.value.trim());
+    else if (key === "email") {
+      const v = $("email").value.trim();
+      mark(field, v ? !EMAIL_RE.test(v) : EMAIL_REQUIRED);
+    } else if (key === "tempAddress") mark(field, !tempAddress.value.trim());
     else if (key === "permAddress") mark(field, !permAddress.value.trim());
     else if (QUESTIONS[key]) {
       const q = QUESTIONS[key];
       const checked = document.querySelector(`input[name="${key}"]:checked`);
       let bad = q.required && !checked;
-      if (checked && checked.value === "Other" && !$(`${key}_other`).value.trim()) bad = true;
+      if (
+        checked &&
+        checked.value === "Other" &&
+        !$(`${key}_other`).value.trim()
+      )
+        bad = true;
       mark(field, bad);
     }
   });
@@ -347,7 +379,9 @@ function validateStep(i) {
     firstBad.classList.remove("invalid");
     void firstBad.offsetWidth;
     firstBad.classList.add("invalid");
-    const input = firstBad.querySelector('input[type="text"]:not([readonly]), input[type="tel"], .other-input.show');
+    const input = firstBad.querySelector(
+      'input[type="text"]:not([readonly]), input[type="tel"], input[type="email"], .other-input.show',
+    );
     if (input) input.focus();
     firstBad.scrollIntoView({ behavior: "smooth", block: "center" });
   }
@@ -361,6 +395,7 @@ function collect() {
   return {
     "Full Name": $("fullName").value.trim(),
     "Phone Number": phone.value.trim(),
+    "Email Address": $("email").value.trim().toLowerCase(),
     "Temporary Address": tempAddress.value.trim(),
     "Permanent Address": permAddress.value.trim(),
     [QUESTIONS.course.title]: getChoiceValue("course"),
@@ -376,6 +411,7 @@ function buildReview() {
   const rows = [
     ["Full name", d["Full Name"], 0],
     ["Mobile number", d["Phone Number"] ? "+977 " + d["Phone Number"] : "", 0],
+    ["Email address", d["Email Address"], 0],
     ["Temporary address", d["Temporary Address"], 1],
     ["Permanent address", d["Permanent Address"], 1],
     ["Interested course", d[QUESTIONS.course.title], 2],
@@ -384,7 +420,11 @@ function buildReview() {
     ["Planning to join", d[QUESTIONS.timeline.title], 4],
     ["May we contact you?", d[QUESTIONS.contact.title], 5],
   ];
-  const esc = (s) => s.replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+  const esc = (s) =>
+    s.replace(
+      /[&<>"]/g,
+      (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c],
+    );
   $("reviewList").innerHTML = rows
     .map(
       ([label, val, step]) => `
@@ -392,7 +432,7 @@ function buildReview() {
         <dt>${label}</dt>
         <dd class="${val ? "" : "empty"}">${val ? esc(val) : "Not answered"}</dd>
         <button type="button" class="edit" data-goto="${step}">Edit</button>
-      </div>`
+      </div>`,
     )
     .join("");
 }
@@ -422,7 +462,9 @@ async function submit() {
   }
 
   if (!SCRIPT_URL || SCRIPT_URL.startsWith("PASTE_")) {
-    showError("Form is not connected yet. Add your Google Apps Script URL in script.js.");
+    showError(
+      "Form is not connected yet. Add your Google Apps Script URL in script.js.",
+    );
     return;
   }
 
@@ -434,11 +476,17 @@ async function submit() {
   try {
     // Apps Script replies from another domain that browsers won't let us read (CORS),
     // so the data is sent with "no-cors". The row is still saved.
-    await fetch(SCRIPT_URL, { method: "POST", mode: "no-cors", body: new URLSearchParams(collect()) });
+    await fetch(SCRIPT_URL, {
+      method: "POST",
+      mode: "no-cors",
+      body: new URLSearchParams(collect()),
+    });
     showDone();
   } catch (err) {
     console.error(err);
-    showError("Could not submit. Please check your internet connection and try again. · पठाउन सकिएन, कृपया इन्टरनेट जाँच गरी फेरि प्रयास गर्नुहोस्।");
+    showError(
+      "Could not submit. Please check your internet connection and try again. · पठाउन सकिएन, कृपया इन्टरनेट जाँच गरी फेरि प्रयास गर्नुहोस्।",
+    );
   } finally {
     nextBtn.disabled = false;
     backBtn.disabled = false;
@@ -461,7 +509,10 @@ function showDone() {
   wizard.hidden = true;
   $("actions").hidden = true;
   $("done").hidden = false;
-  [...segments.children].forEach((seg) => { seg.classList.add("filled"); seg.classList.remove("current"); });
+  [...segments.children].forEach((seg) => {
+    seg.classList.add("filled");
+    seg.classList.remove("current");
+  });
   $("topStep").textContent = "Completed · सम्पन्न";
   $("topTitle").textContent = "Thank you";
   [...stepper.children].forEach((li) => {
@@ -484,8 +535,12 @@ function restart() {
   clearInterval(countdownTimer);
   wizard.reset();
   permAddress.readOnly = false;
-  document.querySelectorAll(".other-input").forEach((o) => o.classList.remove("show"));
-  document.querySelectorAll(".field.invalid").forEach((f) => f.classList.remove("invalid"));
+  document
+    .querySelectorAll(".other-input")
+    .forEach((o) => o.classList.remove("show"));
+  document
+    .querySelectorAll(".field.invalid")
+    .forEach((f) => f.classList.remove("invalid"));
   statusBox.hidden = true;
 
   $("done").hidden = true;
